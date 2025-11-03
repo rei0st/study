@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>新規投稿</title>
+</head>
+<body>
+    <h1>新規投稿</h1>
+    <form method="POST" class="post-form">
+        <p>
+            <label>名前：</label><br>
+            <input type="text" name="name" required>
+        </p>
+        <p>
+            <label>メッセージ：</label><br>
+            <textarea name="message" required></textarea>
+        </p>
+        <p>
+            <input type="submit" value="投稿" class="btn">
+            <a href="{{ url_for('index') }}" class="btn back-btn">戻る</a>
+        </p>
+    </form>
+</body>
+</html>

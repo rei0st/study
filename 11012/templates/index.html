@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>掲示板</title>
+</head>
+<body>
+    <h1>掲示板</h1>
+    <a href="{{ url_for('post') }}" class="new-post-link">新規投稿</a>
+    
+    <h2>投稿一覧</h2>
+    {% for post in posts %}
+        <div class="post">
+            <p><strong>名前：</strong> {{ post.name }}</p>
+            <p><strong>メッセージ：</strong> {{ post.message }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+</body>
+</html>
